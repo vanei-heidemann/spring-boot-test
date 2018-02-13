@@ -1,3 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 spring-boot-test.iml
+lib/spring-boot-test-lib.iml
+lib/target/
+tomcat/spring-boot-test-tomcat.iml
+tomcat/target/
+war/spring-boot-test-war.iml
+war/target/
