@@ -50,8 +50,7 @@ public class CityController {
         return ResponseEntity.noContent().build();
     }
 
-    @RequestMapping(value = "/",
-            method = RequestMethod.GET,
+    @RequestMapping(method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<City>> find(
             @RequestParam(value = "page", defaultValue = "0", required = true) int page,
