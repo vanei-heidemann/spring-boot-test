@@ -24,8 +24,7 @@ public class CityController {
     @Autowired
     private CityDAO cityDAO;
 
-    @RequestMapping(value = "/",
-            method = RequestMethod.POST,
+    @RequestMapping(method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody City city) throws URISyntaxException {
