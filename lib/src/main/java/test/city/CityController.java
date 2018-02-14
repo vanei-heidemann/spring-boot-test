@@ -27,8 +27,8 @@ public class CityController {
     @RequestMapping(method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity create(@RequestBody City city) throws URISyntaxException {
-        return ResponseEntity.created(new URI("/cities/" + cityDAO.saveAndFlush(city).getCode())).build();
+    public ResponseEntity<City> create(@RequestBody City city) throws URISyntaxException {
+        return ResponseEntity.ok(cityDAO.saveAndFlush(city));
     }
 
     @RequestMapping(value = "/{code}",

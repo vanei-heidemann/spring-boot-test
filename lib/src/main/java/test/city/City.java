@@ -18,16 +18,24 @@ public class City implements Serializable {
     @Column(name = "city_name", length = 255, nullable = false)
     private String name;
 
-    @Column(name = "state_code", length = 16, nullable = false)
+    @Column(name = "state_code", length = 3, nullable = false)
     private String state;
+
+    @Column(name = "country_code", length = 3, nullable = false)
+    private String country;
+
+    @Column(name = "zip_code", length = 12, nullable = false)
+    private String zip;
 
     public City() {
     }
 
-    public City(String code, String name, String state) {
+    public City(String code, String name, String state, String country, String zip) {
         this.code = code;
         this.name = name;
         this.state = state;
+        this.country = country;
+        this.zip = zip;
     }
 
     public String getCode() {
@@ -54,6 +62,22 @@ public class City implements Serializable {
         this.state = state;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -72,9 +96,11 @@ public class City implements Serializable {
     @Override
     public String toString() {
         return "City{" +
-                "code=" + code +
+                "code='" + code + '\'' +
                 ", name='" + name + '\'' +
                 ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", zip='" + zip + '\'' +
                 '}';
     }
 }
